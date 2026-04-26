@@ -1,0 +1,13 @@
+# Source assets (not needed for deployment)
+voku/
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Duplicate logos in root (already in /images/)
+/logo.png
+/logo-white.png
+/logo-horizontal.png
+/logo-horizontal-white.png
