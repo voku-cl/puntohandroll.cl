@@ -313,40 +313,75 @@ body {
     50% { opacity: 0; }
 }
 
-/* ===== HERO STATUS BAR ===== */
-.hero-status-bar {
+/* ===== HERO LAUNCH BANNER ===== */
+.hero-launch-banner {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 1.25rem 1rem 1.5rem;
+    background: rgba(230, 0, 110, 0.08);
+    border: 1px solid rgba(230, 0, 110, 0.35);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     margin-bottom: 2rem;
     animation: fadeInUp 1s 0.45s both;
+    box-shadow: 0 0 40px rgba(230, 0, 110, 0.08), inset 0 1px 0 rgba(230, 0, 110, 0.12);
 }
 
-.status-pill {
-    display: inline-flex;
+.launch-banner-left {
+    text-align: left;
+}
+
+.launch-live-indicator {
+    display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.4rem 1rem;
-    border-radius: var(--radius-xl);
     font-family: var(--font-display);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-}
-
-.status-active {
-    background: rgba(230, 0, 110, 0.12);
-    border: 1px solid rgba(230, 0, 110, 0.35);
+    font-size: 0.9rem;
+    font-weight: 700;
     color: var(--color-accent);
+    margin-bottom: 0.3rem;
 }
 
-.status-next {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+.launch-banner-desc {
+    font-size: 0.8rem;
     color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.launch-banner-desc strong {
+    color: var(--color-text);
+}
+
+.launch-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1.4rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: var(--radius-xl);
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(230, 0, 110, 0.45);
+    transition: var(--transition-medium);
+    letter-spacing: 0.02em;
+}
+
+.launch-banner-cta:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 36px rgba(230, 0, 110, 0.6);
+}
+
+.launch-banner-cta:hover svg {
+    transform: translateX(3px);
+    transition: var(--transition-fast);
 }
 
 .live-dot-sm {
@@ -1262,6 +1297,25 @@ body {
         width: 40px;
         height: 2px;
         background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
+    }
+
+    .hero-launch-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .launch-banner-left {
+        text-align: center;
+    }
+
+    .launch-live-indicator {
+        justify-content: center;
+    }
+
+    .launch-banner-cta {
+        width: 100%;
+        justify-content: center;
     }
 }
 
