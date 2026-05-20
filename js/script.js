@@ -157,6 +157,12 @@ function setupScrollAnimations() {
         item.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(item);
     });
+
+    // Observe phase cards
+    document.querySelectorAll('.phase-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.2}s`;
+        observer.observe(card);
+    });
 }
 
 // ===== SMOOTH PARALLAX ON HERO =====

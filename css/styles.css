@@ -909,6 +909,235 @@ body {
     filter: invert(1) brightness(1);
 }
 
+/* ===== LAUNCH PHASES SECTION ===== */
+.launch-section {
+    padding: 6rem 2rem;
+    background: var(--color-bg-dark);
+    position: relative;
+}
+
+.launch-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-primary) 50%, transparent 100%);
+    opacity: 0.3;
+}
+
+.launch-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.launch-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 1.1rem;
+    background: rgba(230, 0, 110, 0.1);
+    border: 1px solid rgba(230, 0, 110, 0.3);
+    border-radius: var(--radius-xl);
+    margin-bottom: 1.2rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    letter-spacing: 0.03em;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    flex-shrink: 0;
+    animation: live-pulse 2s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(230, 0, 110, 0.5); }
+    50% { box-shadow: 0 0 0 6px rgba(230, 0, 110, 0); }
+}
+
+.launch-phases {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.phase-card {
+    flex: 1;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem;
+    position: relative;
+    transition: var(--transition-medium);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.phase-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.phase-active {
+    border-color: rgba(230, 0, 110, 0.35);
+    background: linear-gradient(
+        145deg,
+        rgba(230, 0, 110, 0.06) 0%,
+        var(--color-bg-card) 60%
+    );
+    box-shadow: 0 0 40px rgba(230, 0, 110, 0.08), inset 0 1px 0 rgba(230, 0, 110, 0.15);
+}
+
+.phase-upcoming {
+    opacity: 0;
+}
+
+.phase-upcoming.visible {
+    opacity: 0.7;
+}
+
+.phase-upcoming:hover {
+    opacity: 1 !important;
+    background: var(--color-bg-card-hover);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.phase-status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-xl);
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+}
+
+.phase-badge-now {
+    background: rgba(230, 0, 110, 0.15);
+    color: var(--color-accent);
+    border: 1px solid rgba(230, 0, 110, 0.3);
+}
+
+.phase-badge-soon {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+}
+
+.phase-date-label {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-subtle);
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+}
+
+.phase-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.phase-active .phase-icon-wrap {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    box-shadow: 0 4px 20px var(--color-primary-glow);
+}
+
+.phase-upcoming .phase-icon-wrap {
+    background: var(--color-bg-card-hover);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+}
+
+.phase-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.phase-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.phase-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-radius: var(--radius-xl);
+    transition: var(--transition-medium);
+    box-shadow: 0 4px 16px rgba(230, 0, 110, 0.25);
+}
+
+.phase-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(230, 0, 110, 0.4);
+}
+
+.phase-cta:hover svg {
+    transform: translateX(3px);
+    transition: var(--transition-fast);
+}
+
+.phase-coming-note {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-subtle);
+    padding: 0.5rem 1rem;
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-xl);
+}
+
+.phase-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.phase-connector-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, transparent 100%);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .logo {
@@ -972,6 +1201,22 @@ body {
 
     .whatsapp-tooltip {
         display: none;
+    }
+
+    .launch-phases {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .phase-connector {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .phase-connector-line {
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
     }
 }
 
