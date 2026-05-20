@@ -1,6 +1,6 @@
 // ===== CONFIGURATION =====
 const CONFIG = {
-    openingDate: new Date('2026-05-18T12:00:00-04:00').getTime(),
+    openingDate: new Date('2026-06-01T12:00:00-04:00').getTime(),
     taglines: [
         'Una nueva experiencia en sushi handroll',
         'Ingredientes frescos, hechos al momento',
@@ -17,14 +17,11 @@ function updateCountdown() {
     const distance = CONFIG.openingDate - now;
 
     if (distance <= 0) {
-        document.getElementById('countdown-label').textContent = '¡Ya abrimos!';
+        document.getElementById('countdown-label').textContent = '¡Menú completo disponible!';
         document.getElementById('days').textContent = '00';
         document.getElementById('hours').textContent = '00';
         document.getElementById('minutes').textContent = '00';
         document.getElementById('seconds').textContent = '00';
-
-        const cta = document.getElementById('cta-menu');
-        if (cta) cta.querySelector('span').textContent = 'Pedir Ahora';
         return;
     }
 
