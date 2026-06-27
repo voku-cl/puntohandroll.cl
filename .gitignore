@@ -11,3 +11,10 @@ _raw_assets/
 .claude/
 voku/
 *.pdf
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
