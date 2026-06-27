@@ -313,75 +313,39 @@ body {
     50% { opacity: 0; }
 }
 
-/* ===== HERO LAUNCH BANNER ===== */
-.hero-launch-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1rem 1.25rem 1rem 1.5rem;
+/* ===== HERO LIVE BANNER ===== */
+.hero-live-banner {
+    text-align: center;
+    padding: 1rem 1.5rem;
     background: rgba(230, 0, 110, 0.08);
     border: 1px solid rgba(230, 0, 110, 0.35);
     border-radius: var(--radius-lg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     animation: fadeInUp 1s 0.45s both;
     box-shadow: 0 0 40px rgba(230, 0, 110, 0.08), inset 0 1px 0 rgba(230, 0, 110, 0.12);
 }
 
-.launch-banner-left {
-    text-align: left;
-}
-
 .launch-live-indicator {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-display);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-accent);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 .launch-banner-desc {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .launch-banner-desc strong {
     color: var(--color-text);
-}
-
-.launch-banner-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.75rem 1.4rem;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    color: white;
-    text-decoration: none;
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 700;
-    border-radius: var(--radius-xl);
-    white-space: nowrap;
-    flex-shrink: 0;
-    box-shadow: 0 4px 20px rgba(230, 0, 110, 0.45);
-    transition: var(--transition-medium);
-    letter-spacing: 0.02em;
-}
-
-.launch-banner-cta:hover {
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 8px 36px rgba(230, 0, 110, 0.6);
-}
-
-.launch-banner-cta:hover svg {
-    transform: translateX(3px);
-    transition: var(--transition-fast);
 }
 
 .live-dot-sm {
@@ -393,99 +357,117 @@ body {
     animation: live-pulse 2s ease-in-out infinite;
 }
 
-/* ===== COUNTDOWN ===== */
-.countdown-label {
+/* ===== ORDER OPTIONS ===== */
+.order-options {
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s 0.6s both;
+}
+
+.order-options-label {
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--color-primary);
     margin-bottom: 1rem;
-    animation: fadeInUp 1s 0.5s both;
 }
 
-.countdown {
+.order-buttons {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: stretch;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s 0.6s both;
+    gap: 1rem;
 }
 
-.countdown-item {
-    background: var(--color-bg-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1rem 1.2rem;
-    min-width: 80px;
-    transition: var(--transition-fast);
-}
-
-.countdown-item:hover {
-    background: var(--color-bg-card-hover);
-    border-color: rgba(230, 0, 110, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(230, 0, 110, 0.12);
-}
-
-.countdown-number {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.1;
-    transition: transform 0.15s ease;
-}
-
-.countdown-text {
-    font-size: 0.7rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-text-subtle);
-    margin-top: 0.25rem;
-}
-
-.countdown-separator {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    animation: blink 1s step-end infinite;
-    margin: 0 -0.15rem;
-    padding-bottom: 1rem;
-}
-
-@keyframes blink {
-    50% { opacity: 0.3; }
-}
-
-/* ===== OPENING DATE ===== */
-.opening-date {
+.order-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    margin-bottom: 2rem;
-    padding: 0.6rem 1.2rem;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    animation: fadeInUp 1s 0.7s both;
+    gap: 0.85rem;
+    padding: 0.85rem 1.5rem 0.85rem 0.85rem;
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-medium);
+    min-width: 210px;
 }
 
-.opening-date svg {
+.order-btn-pedidosya {
+    background: linear-gradient(135deg, #ff004f 0%, #e6006e 100%);
+    color: white;
+    box-shadow: 0 4px 22px rgba(255, 0, 79, 0.4);
+}
+
+.order-btn-pedidosya:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 38px rgba(255, 0, 79, 0.55);
+}
+
+.order-btn-ubereats {
+    background: linear-gradient(135deg, #06c167 0%, #05a657 100%);
+    color: white;
+    box-shadow: 0 4px 22px rgba(6, 193, 103, 0.4);
+}
+
+.order-btn-ubereats:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 38px rgba(6, 193, 103, 0.55);
+}
+
+.order-btn-fudo {
+    background: var(--color-bg-card);
+    border: 1px solid rgba(230, 0, 110, 0.35);
+    color: var(--color-text);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding-left: 1.5rem;
+}
+
+.order-btn-fudo:hover {
+    transform: translateY(-3px) scale(1.03);
+    border-color: var(--color-primary);
+    background: var(--color-bg-card-hover);
+    box-shadow: 0 10px 38px rgba(230, 0, 110, 0.2);
+}
+
+.order-btn-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.order-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
     color: var(--color-primary);
+}
+
+.order-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.order-btn-sub {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+}
+
+.order-btn-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
 }
 
 /* ===== CTA BUTTON ===== */
@@ -1228,23 +1210,6 @@ body {
         font-size: 1rem;
     }
 
-    .countdown {
-        gap: 0.35rem;
-    }
-
-    .countdown-item {
-        padding: 0.75rem 0.8rem;
-        min-width: 64px;
-    }
-
-    .countdown-number {
-        font-size: 1.8rem;
-    }
-
-    .countdown-separator {
-        font-size: 1.5rem;
-    }
-
     .info-cards {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1299,22 +1264,13 @@ body {
         background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
     }
 
-    .hero-launch-banner {
+    .order-buttons {
         flex-direction: column;
-        text-align: center;
-        gap: 1rem;
     }
 
-    .launch-banner-left {
-        text-align: center;
-    }
-
-    .launch-live-indicator {
-        justify-content: center;
-    }
-
-    .launch-banner-cta {
+    .order-btn {
         width: 100%;
+        min-width: 0;
         justify-content: center;
     }
 }
@@ -1328,26 +1284,8 @@ body {
         width: 180px;
     }
 
-    .countdown-item {
-        padding: 0.6rem;
-        min-width: 56px;
-        border-radius: var(--radius-sm);
-    }
-
-    .countdown-number {
-        font-size: 1.5rem;
-    }
-
-    .countdown-text {
-        font-size: 0.6rem;
-    }
-
-    .countdown-separator {
-        font-size: 1.2rem;
-    }
-
-    .opening-date {
-        font-size: 0.85rem;
+    .order-btn-name {
+        font-size: 1.05rem;
     }
 
     .gallery-grid {

@@ -1,51 +1,14 @@
 // ===== CONFIGURATION =====
 const CONFIG = {
-    openingDate: new Date('2026-06-01T12:00:00-04:00').getTime(),
     taglines: [
-        'Una nueva experiencia en sushi handroll',
+        'Una experiencia única en sushi handroll',
         'Ingredientes frescos, hechos al momento',
-        'Próximamente en tu ciudad',
+        'Pide online en Temuco',
     ],
     typewriterSpeed: 60,
     typewriterPause: 3000,
     typewriterDeleteSpeed: 30,
 };
-
-// ===== COUNTDOWN TIMER =====
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = CONFIG.openingDate - now;
-
-    if (distance <= 0) {
-        document.getElementById('countdown-label').textContent = '¡Menú completo disponible!';
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    animateNumber(document.getElementById('days'), days);
-    animateNumber(document.getElementById('hours'), hours);
-    animateNumber(document.getElementById('minutes'), minutes);
-    animateNumber(document.getElementById('seconds'), seconds);
-}
-
-function animateNumber(element, value) {
-    const formatted = String(value).padStart(2, '0');
-    if (element.textContent !== formatted) {
-        element.style.transform = 'scale(1.1)';
-        element.textContent = formatted;
-        setTimeout(() => {
-            element.style.transform = 'scale(1)';
-        }, 150);
-    }
-}
 
 // ===== TYPEWRITER EFFECT =====
 class Typewriter {
@@ -179,10 +142,6 @@ function setupParallax() {
 
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
-    // Countdown
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
     // Typewriter
     const tagline = document.getElementById('tagline');
     if (tagline) {

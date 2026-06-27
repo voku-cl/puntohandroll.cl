@@ -8,5 +8,6 @@ _raw_assets/
 # IDE and OS files
 .DS_Store
 .vscode/
+.claude/
 voku/
 *.pdf
